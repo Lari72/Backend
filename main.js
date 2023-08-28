@@ -6,7 +6,7 @@ class ProductManager {
     
      static id = 0
 
-     addProduct(title, description, price, image,  code, stock) {
+     addProduct(title, description, price, thumbnail,  code, stock) {
         for(let i = 0; i < this.products.length; i++) {
             
             if(this.products[i].code === code) {
@@ -19,7 +19,7 @@ const newProduct = {
     title, 
     description, 
     price, 
-    image, 
+    thumbnail, 
     code, 
     stock,
 
@@ -58,15 +58,15 @@ const productos = new ProductManager();
 console.log(productos.getProduct());
 // Agregamos producto 
 
-productos.addProduct("titulo1", "descripcion1", 1000, "imagen1", "abc123", 5);
-productos.addProduct("titulo2", "descripcion2", 1000, "imagen1", "abc123",);
+productos.addProduct("producto prueba1", "este es un producto prueba1", 200, "thumbnail1", "abc123", 25);
+productos.addProduct("producto prueba2", "este es un producto prueba2", 300, "thumbnail1", "abc123",);
 
 // Arreglo con productos
 console.log(productos.getProduct());
 
 // validacion de code repetido 
 
-productos.addProduct("titulo3", "descripcion2", 1000, "imagen1", "abc124", 7);
+productos.addProduct("producto prueba3", "este es un producto prueba2", 300, "thumbnail1", "abc124",7);
 
 // Busqueda de producto por ID 
 productos.getProductById(2);
